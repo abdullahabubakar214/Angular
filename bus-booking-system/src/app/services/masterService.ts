@@ -19,4 +19,14 @@ export class MasterService {
       `${this.apiUrl}searchBus?fromLocation=${from}&toLocation=${to}&travelDate=${travelDate}`
     );
   }
+
+  getBusScehduleById(id: number) {
+    return this.http.get<any[]>(this.apiUrl + 'GetBusScheduleById?id=+id');
+  }
+
+  getBookedSeats(id: number) {
+    return this.http.get<any[]>(this.apiUrl + 'getBookedSeats?shceduleId=+id');
+  }
+
+  
 }

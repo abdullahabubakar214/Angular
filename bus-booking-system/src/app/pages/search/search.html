@@ -58,20 +58,27 @@
   <!-- Buses List -->
   <section id="buses-list" class="my-4">
     <h2>Available Buses</h2>
-    @for (item of busList; track $index){
+
+    <div class="row">
+      <div class="col-12 pt-5 text-center">
+        <p>Select From &amp; To Location to Filter Bus</p>
+      </div>
+    </div>
+
+    <!-- @for (item of busList; track $index) -->
     <div class="row">
       <div class="col-12">
         <div class="card mb-3" style="background-color: #abb1b7">
           <div class="row g-0">
             <div class="col-md-3 d-flex flex-column justify-content-center align-items-center">
-              <h5 class="card-title">{{ item.busName }}</h5>
-              <p class="card-text">{{ item.vendorName }}</p>
+              <h5 class="card-title">Bus Name</h5>
+              <p class="card-text">VendorName</p>
             </div>
             <div class="col-md-9">
               <div class="card-body row">
                 <div class="col-md-2">
                   <p class="card-text">
-                    <strong>{{ item.departureTime | date : 'hh:mm:ss' }}</strong>
+                    <strong>10:00:00</strong>
                   </p>
                   <p class="card-text">Departure</p>
                 </div>
@@ -81,10 +88,10 @@
                 </div>
                 <div class="col-md-2">
                   <p class="card-text">
-                    <strong>{{ item.arrivalTime | date : 'hh:mm:ss' }}</strong>
+                    <strong>02:00:00</strong>
                   </p>
                   <p class="card-text">Arrival</p>
-                  <p class="text-danger">{{ item.arrivalTime | date : 'dd-MM-yyyy' }}</p>
+                  <p class="text-danger">09-09-2025</p>
                 </div>
                 <div class="col-md-2">
                   <p class="card-text"><strong>4.5</strong> ⭐</p>
@@ -92,16 +99,14 @@
                 </div>
                 <div class="col-md-2">
                   <p class="card-text">
-                    <strong>PKR {{ item.price }}</strong>
+                    <strong>PKR 1000</strong>
                   </p>
-                  <p class="card-text">
-                    {{ item.availableSeats }} Seats available Out Of {{ item.totalSeats }}
-                  </p>
+                  <p class="card-text">10 Seats available Out Of 40</p>
                 </div>
                 <div class="col-md-2 text-end">
                   <button
                     class="btn btn-danger"
-                    [routerLink]="['/booking', item.scheduleId]"
+                    [routerLink]="['/booking']"
                     routerLinkActive="router-link-active"
                   >
                     Book Seat
@@ -111,13 +116,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    }
-
-    <div class="row">
-      <div class="col-12 pt-5 text-center">
-        <p>Select From &amp; To Location to Filter Bus</p>
       </div>
     </div>
 

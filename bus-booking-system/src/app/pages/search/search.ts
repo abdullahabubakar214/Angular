@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MasterService } from '../../services/masterService';
 import { Observable } from 'rxjs';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
