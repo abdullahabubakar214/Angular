@@ -9,6 +9,7 @@
       <li *ngFor="let item of list">
         <input type="checkbox" [(ngModel)]="item.isDone" />
         {{ item.value }}
+        
         <button class="btn" (click)="deleteTodo(item.id)">Delete</button>
       </li>
     </ul>
